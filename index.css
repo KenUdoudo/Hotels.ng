@@ -83,6 +83,9 @@ nav ul li a {
     height: 100%;
   }
 }
+.hamburger {
+  display: none;
+}
 @media screen and (max-width: 1024px) {
   .content h1 {
     font-size: 100px;
@@ -103,11 +106,47 @@ nav ul li a {
   }
 }
 @media screen and (max-width: 425px) {
+  .menu {
+    display: none;
+  }
   .content h1 {
     font-size: 90px;
   }
   .content p {
     font-size: 15px;
+  }
+  .hamburger {
+    display: block;
+    appearance: none;
+    border: none;
+    outline: none;
+    background: none;
+    cursor: none;
+  }
+  .hamburger span {
+    display: block;
+    width: 33px;
+    height: 4px;
+    margin-bottom: 5px;
+    position: relative;
+    background-color: #fff;
+    border-radius: 6px;
+    z-index: 1;
+    transform-origin: 0 0;
+    transition: 0.7s;
+  }
+  .hamburger:hover span:nth-child(2) {
+    transform: translateX(10px);
+  }
+  .hamburger.is-active span:nth-child(1) {
+    transform: translate(0px, -2px) rotate(45deg);
+  }
+  .hamburger.is-active span:nth-child(2) {
+    opacity: 0;
+    transform: translateX(15px);
+  }
+  .hamburger.is-active span:nth-child(3) {
+    transform: translate(-3px, 3px) rotate(-45deg);
   }
 }
 @media screen and (max-width: 375px) {
