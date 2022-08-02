@@ -107,7 +107,20 @@ nav ul li a {
 }
 @media screen and (max-width: 425px) {
   .menu {
-    display: none;
+    display: flex;
+    position: fixed;
+    left: 0;
+    top: 70px;
+    gap: 0;
+    flex-direction: column;
+    background-color: transparent;
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+    padding-top: 5px;
+  }
+  .menu.active {
+    left: -100%;
   }
   .content h1 {
     font-size: 90px;
